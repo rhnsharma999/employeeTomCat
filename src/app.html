@@ -1,8 +1,32 @@
 <template>
-  <h1>${message}</h1>
-  <form submit.trigger = "changeTitle()">
-    <input type = "text" value.bind = "name">
-    <input type = "text" value.bind = "city">
+<h1>Hello World</h1>
+<button click.trigger = "getData()">Refresh</button>
+  <form submit.trigger = "addData()">
+    <h4>Enter Name</h4>
+    <input type = "text" value.bind = "inputName">
+    <br><br>
+    <h4>Enter City</h4>
+    <input type = "text" value.bind = "inputCity">
+    <br><br>
     <button type = "submit">Submit</button>
   </form>
+
+
+  <br><br>
+  
+  <table border = 1 width = 500>
+    <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th></th>
+    </tr>
+    <tr repeat.for = "d of data">
+      <td>${d.name}</td>
+      <td>${d.city}</td>
+      <td>
+        <button click.trigger = "removeData(d)">Remove</button>
+      </td>
+    </tr>
+  </table>
+
 </template>
